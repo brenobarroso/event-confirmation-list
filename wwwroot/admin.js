@@ -3,6 +3,16 @@ const eventFeedbackEl = document.getElementById("event-feedback");
 const guestListEl = document.getElementById("guest-list");
 const totalGuestsEl = document.getElementById("total-guests");
 
+async function ensureAdminSession() {
+  const response = await fetch("/api/admin/session");
+  if (!response.ok) {
+    window.location.href = "/";
+    return false;
+  }
+
+  return true;
+}
+
 async function loadAdminData() {
   try {
     const response = await fetch("/api/admin/dados");
@@ -72,4 +82,13 @@ eventFormEl.addEventListener("submit", async (event) => {
   }
 });
 
-loadAdminData();
+async function initAdminPage() {
+  const hasSession = await ensureAdminSession();
+  if (!hasSession) {
+    return;
+  }
+
+  await loadAdminData();
+}
+
+initAdminPage();

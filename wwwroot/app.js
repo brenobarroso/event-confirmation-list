@@ -5,6 +5,7 @@ const locationEl = document.getElementById("event-location");
 const formEl = document.getElementById("rsvp-form");
 const nameInputEl = document.getElementById("guest-name");
 const feedbackEl = document.getElementById("rsvp-feedback");
+const adminLinkEl = document.getElementById("admin-link");
 
 async function loadEventInfo() {
   try {
@@ -58,3 +59,31 @@ formEl.addEventListener("submit", async (event) => {
 });
 
 loadEventInfo();
+
+adminLinkEl.addEventListener("click", async (event) => {
+  event.preventDefault();
+
+  const password = window.prompt("Digite a senha da Área do Anfitrião:");
+  if (!password) {
+    return;
+  }
+
+  try {
+    const response = await fetch("/api/admin/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ password })
+    });
+
+    if (!response.ok) {
+      window.alert("Senha incorreta.");
+      return;
+    }
+
+    window.location.href = "/admin.html";
+  } catch (error) {
+    window.alert("Erro ao validar senha. Tente novamente.");
+  }
+});
