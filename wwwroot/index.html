@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirmação de Presença</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="glass-card main-card">
+      <h1 id="event-title">Carregando evento...</h1>
+      <div class="event-details">
+        <p><strong>Data:</strong> <span id="event-date">-</span></p>
+        <p><strong>Hora:</strong> <span id="event-time">-</span></p>
+        <p><strong>Local:</strong> <span id="event-location">-</span></p>
+      </div>
+
+      <form id="rsvp-form" class="form">
+        <label for="guest-name">Seu nome</label>
+        <input id="guest-name" name="name" type="text" placeholder="Digite seu nome" required />
+        <button type="submit">Confirmar Presença</button>
+      </form>
+
+      <p id="rsvp-feedback" class="feedback"></p>
+      <a class="admin-link" href="admin.html">Área do anfitrião</a>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# Build artifacts
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# IDE folders
+.vs/
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test and coverage outputs
+TestResults/
+*.trx
+coverage/
+coverage-results/
+
+# Publish outputs
+publish/
+artifacts/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Entity Framework local db/tooling artifacts
+*.db
+*.db-shm
+*.db-wal

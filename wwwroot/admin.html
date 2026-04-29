@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administração do Evento</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page admin-layout">
+    <section class="glass-card">
+      <h1>Painel do Anfitrião</h1>
+      <form id="event-form" class="form">
+        <label for="title">Título do evento</label>
+        <input id="title" name="title" type="text" required />
+
+        <label for="date">Data</label>
+        <input id="date" name="date" type="text" placeholder="Ex: 15/06/2026" required />
+
+        <label for="time">Hora</label>
+        <input id="time" name="time" type="text" placeholder="Ex: 19:30" required />
+
+        <label for="location">Local</label>
+        <input id="location" name="location" type="text" required />
+
+        <button type="submit">Salvar Evento</button>
+      </form>
+      <p id="event-feedback" class="feedback"></p>
+    </section>
+
+    <section class="glass-card">
+      <h2>Convidados Confirmados</h2>
+      <p>Total de pessoas: <strong id="total-guests">0</strong></p>
+      <ul id="guest-list" class="guest-list"></ul>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
